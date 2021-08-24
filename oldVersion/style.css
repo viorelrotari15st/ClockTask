@@ -1,0 +1,33 @@
+html,body{
+    
+    display: flex;
+    justify-content: center;}
+
+#clock {
+     color:#a5842a ;
+    font-size: 60px;
+    font-family: Orbitron;
+    letter-spacing: 7px;
+}
+
+.pendulum {
+    
+    --rotation: 90;
+    border: 10px solid red;
+    background-color: red;
+    transform-origin: left;
+    transform: rotate(calc(var(--rotation)*1deg));
+    width: 300px;
+    margin-left: 250px;
+    
+}
+#img {
+    
+    
+    display: flex;
+    
+    width: 300px;  
+    height: 300px; 
+    margin: auto;  
+
+}

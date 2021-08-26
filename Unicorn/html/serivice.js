@@ -39,7 +39,7 @@ const delay = (time) => {
 
     });
 }
-//import HokingRequest from "./logicService";
+
 
 const unicorn = new HokingRequest();
 const setData = document.getElementById('setData')
@@ -57,8 +57,8 @@ unicorn.getData().then((data) => {
              <p class="card-text">Name : ${element.name} </p>
             <p class="card-text">Age : ${element.age} </p>
              <p class="card-text">Color : ${element.colour} </p>
-            <button type="button" class="btn btn-primary btn-lg" onclick="deleteData("${element._id}")" id ="deleteCard">Delete</button>
-            <button type="button" class="btn btn-secondary btn-lg" id ="updateCard">Update</button>
+            <button type="button" class="btn btn-primary btn-lg" onclick="deleteData('${element._id}')" id="deleteCard">Delete</button>
+            <button type="button" class="btn btn-secondary on btn-lg" onclick="updateDataDinamic('${element._id}')" id="updateCard">Update</button>
            </div>
         </div>
        
@@ -70,20 +70,27 @@ unicorn.getData().then((data) => {
     return setData.innerHTML = `<div>${html}</div>`;
 
 })
-const getId = document.getElementById("getID")
+//const getId = document.getElementById("getID")
 //const deleteCard = document.getElementById("deleteCard")
-function deleteData(gatId) {
-    return unicorn.deleteData(gatId);
+function deleteData(id) {
+    console.log(id)
+    unicorn.deleteData(id);
 }
-// const getId = document.getElementById("getID").value
-// let dataForPut = {}
-// unicorn.putData()
+const dataForUpdate = { 
+    "name": "NEW viorle",
+    "age": 2,
+    "colour": "blue"
+}
+function updateDataDinamic(id) {
+    return unicorn.putData(id ,dataForUpdate);
+}
 
 
-//  deleteCard.addEventListener('click', function(e){
-//     const getId = document.getElementById("getID").value
-//     let event = unicorn.deleteData(getId)
-//     return event
-// })
+
+//   deleteCard.addEventListener('click', function(e){
+//      const getId = document.getElementById("getID").value
+     
+//      return unicorn.deleteData(getId)
+//  })
 
 
